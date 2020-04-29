@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.cell {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    height: 150px;
+    width: 150px;
+    margin: 2px;
+    cursor: pointer;
+}
+.cell:hover{
+    background-color: lightgray;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.symbol {
+    line-hight: 15px;
 }

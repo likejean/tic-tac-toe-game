@@ -1,0 +1,7 @@
+#board {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 25px;
+    width: 515px;
+    height: 515px;
+}
