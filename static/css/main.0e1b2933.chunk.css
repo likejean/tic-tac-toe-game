@@ -1,0 +1,2 @@
+.cell{border:1px solid #add8e6;border-radius:10px;height:150px;width:150px;margin:2px;cursor:pointer}.cell:hover{background-color:#d3d3d3}.disabled{color:grey;cursor:not-allowed}.disabled:hover{opacity:.35}.symbol{line-hight:15px}#board{border:1px solid #d3d3d3;border-radius:20px;padding:25px;width:515px;height:515px}.badge{padding:10px;margin:5px;font-size:18px}.players-info{top:25px;position:relative}.cross,.zero{width:150px;height:150px;margin:0}
+/*# sourceMappingURL=main.0e1b2933.chunk.css.map */
