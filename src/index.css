@@ -10,6 +10,15 @@
     background-color: lightgray;
 }
 
+.disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    opacity: 0.35;
+}
+
 .symbol {
     line-hight: 15px;
 }
