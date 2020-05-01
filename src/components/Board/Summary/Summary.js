@@ -11,7 +11,6 @@ export default connect(
 )
 (props => {
     const {players, result, board, checkGameResult} = props;
-    console.log(!(result.win || result.tie));
     if (!(result.win || result.tie)) checkGameResult(board);
 
     const WinnerResult = () => {
@@ -39,7 +38,6 @@ export default connect(
 
     return (
         <div className="players-info mt-6">
-
             <div className="col">
                 <p>
                     <span className="badge badge-pill badge-primary">

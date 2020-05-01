@@ -1,4 +1,4 @@
-import {X_WINS, O_WINS, TIE, IN_PROGRESS} from '../helpers/actionTypes';
+import {X_WINS, O_WINS, TIE, IN_PROGRESS, RESET_RESULT} from '../helpers/actionTypes';
 
 const initialState = {
     win: null,
@@ -25,6 +25,12 @@ export function resultReducer(state = initialState, action) {
                 win: null,
                 tie: true,
                 gameOver: true
+            }
+        case RESET_RESULT:
+            return {
+                win: null,
+                tie: false,
+                gameOver: false
             }
         case IN_PROGRESS:
             return {

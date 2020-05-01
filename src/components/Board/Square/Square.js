@@ -13,7 +13,7 @@ function Square (props) {
     return (
         <div
             className={`cell ${disabled}`}
-            onClick={ () => drawSymbol(board, players, cellIndex).then(() => {toggleTurnAction();}) }
+            onClick={() => drawSymbol(board, players, cellIndex).then(() => {toggleTurnAction();})}
         >
             {symbol ?
                 !gameOver ?
@@ -33,7 +33,7 @@ const mapDispatchToProps = dispatch => ({
     drawSymbol: (board, players, cellIndex) => {
         if (players[players.turn] === 'X') {
             return dispatch(drawXAction(cellIndex));
-        }else {
+        }else{
             return dispatch(drawOAction(cellIndex))
         }
     },

@@ -22,3 +22,12 @@
 .symbol {
     line-hight: 15px;
 }
+
+.players-info {
+    top: 25px;
+    position: relative;
+    padding: 15px;
+    border-radius: 25px;
+    width: 515px;
+    border: 1px solid lightgray;
+}

@@ -1,4 +1,4 @@
-import { X_WINS, O_WINS, TIE } from '../helpers/actionTypes';
+import { X_WINS, O_WINS, TIE, RESET_RESULT } from '../helpers/actionTypes';
 import  { checkVictory, winsOptions } from '../helpers/checkWins';
 
 export function checkGameResult(board) {
@@ -23,6 +23,12 @@ export function checkGameResult(board) {
                 type: 'VOID'
             }
         }
+    }
+};
+
+export function resetResult() {
+    return {
+        type: RESET_RESULT
     }
 }
 

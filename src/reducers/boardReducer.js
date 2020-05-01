@@ -1,5 +1,4 @@
-import { DRAW_X, DRAW_O } from '../helpers/actionTypes';
-
+import { DRAW_X, DRAW_O, RESET_GAME } from '../helpers/actionTypes';
 
 const initialState = [...Array(9).keys()].map(() => '');
 
@@ -13,6 +12,8 @@ export function boardReducer(state = initialState, action) {
            const stateByO = [...state];
            stateByO[action.cellIndex] = stateByO[action.cellIndex] ? stateByO[action.cellIndex] : 'O';
            return stateByO;
+       case RESET_GAME:
+           return [...Array(9).keys()].map(() => '');
        default:
            return state;
    }
