@@ -1,8 +1,9 @@
-import { X_WINS, O_WINS, TIE } from '../helpers/actionTypes';
+import {X_WINS, O_WINS, TIE, IN_PROGRESS} from '../helpers/actionTypes';
 
 const initialState = {
     win: null,
-    tie: false
+    tie: false,
+    gameOver: false
 };
 
 export function resultReducer(state = initialState, action) {
@@ -10,17 +11,26 @@ export function resultReducer(state = initialState, action) {
         case X_WINS:
             return {
                 win: 'X',
-                tie: false
+                tie: false,
+                gameOver: true
             }
         case O_WINS:
             return {
                 win: 'O',
-                tie: false
+                tie: false,
+                gameOver: true
             }
         case TIE:
             return {
                 win: null,
-                tie: true
+                tie: true,
+                gameOver: true
+            }
+        case IN_PROGRESS:
+            return {
+                win: null,
+                tie: false,
+                gameOver: false
             }
         default: return state;
     }

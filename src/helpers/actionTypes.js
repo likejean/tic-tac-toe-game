@@ -8,3 +8,4 @@ export const TURN = 'TURN';
 export const X_WINS = 'X_WINS';
 export const O_WINS = 'Y_WINS';
 export const TIE = 'TIE';
+export const IN_PROGRESS = 'IN_PROGRESS';

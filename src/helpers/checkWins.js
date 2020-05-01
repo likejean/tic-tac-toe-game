@@ -9,6 +9,7 @@ export const winsOptions = [
     [2, 4, 6]
 ];
 
+
 export const checkVictory = (wins, board, symbol) => {
     for (let i = 0; i < wins.length; i++){
         if (board[wins[i][0]] === symbol && board[wins[i][1]] === symbol && board[wins[i][2]] === symbol) return true;

@@ -1,15 +1,25 @@
 import { DRAW_X, DRAW_O } from "../helpers/actionTypes";
 
 export function drawXAction(cellIndex) {
-    return {
-        type: DRAW_X,
-        cellIndex
+    return dispatch => {
+        return new Promise(resolve => {
+            dispatch({
+                type: DRAW_X,
+                cellIndex
+            });
+            resolve(() => console.log(resolve));
+        })
     }
 };
 
 export function drawOAction(cellIndex) {
-    return {
-        type: DRAW_O,
-        cellIndex
+    return dispatch => {
+        return new Promise(resolve => {
+            dispatch({
+                type: DRAW_O,
+                cellIndex
+            });
+            resolve(() => console.log(resolve));
+        })
     }
 };

@@ -2,7 +2,7 @@ import { X_WINS, O_WINS, TIE } from '../helpers/actionTypes';
 import  { checkVictory, winsOptions } from '../helpers/checkWins';
 
 export function checkGameResult(board) {
-    console.log(board);
+
     if(checkVictory(winsOptions, board, 'X')) {
         return {
             type: X_WINS
@@ -12,8 +12,16 @@ export function checkGameResult(board) {
             type: O_WINS
         }
     }else{
-        return {
-            type: TIE
+        const checkBlanks = board.filter(symbol => symbol === '');
+        if (checkBlanks.length === 0){
+            return {
+                type: TIE
+            }
+        }
+        else {
+            return {
+                type: 'VOID'
+            }
         }
     }
 }

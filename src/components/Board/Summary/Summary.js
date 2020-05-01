@@ -2,11 +2,19 @@ import React from 'react';
 import {connect} from 'react-redux';
 import cross from '../../../assets/images/cross.png';
 import zero from '../../../assets/images/zero.png';
+import { checkGameResult } from "../../../actions/resultsAction";
 
-export default connect(({players, result}) => ({players, result}))(props => {
-    const {players, result} = props;
-    console.log('RESULT', result)
-    const winnerResult = () => {
+
+export default connect(
+    ({board, players, result}) => ({board, players, result}),
+    dispatch => ({ checkGameResult: board => dispatch(checkGameResult(board))})
+)
+(props => {
+    const {players, result, board, checkGameResult} = props;
+    console.log(!(result.win || result.tie));
+    if (!(result.win || result.tie)) checkGameResult(board);
+
+    const WinnerResult = () => {
         if (!result.tie && result.win === null) return null;
         else {
             if (result.tie) {
@@ -54,8 +62,8 @@ export default connect(({players, result}) => ({players, result}))(props => {
                     <span className="badge badge-pill badge-danger">Player 2</span>
                 }
                 </p>
-                {winnerResult()}
+                <WinnerResult/>
             </div>
         </div>
     )
-})
+});

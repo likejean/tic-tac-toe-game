@@ -4,24 +4,23 @@ import Zero from './Zero/Zero';
 import { connect } from 'react-redux';
 import { drawXAction, drawOAction } from "../../../actions/boardAction";
 import {toggleTurnAction} from "../../../actions/playerAction";
-import {checkGameResult} from "../../../actions/resultsAction";
-
-
 
 function Square (props) {
 
-    const { symbol, cellIndex, drawSymbol, players, board } = props;
-    console.log('board',board)
-    const disabled = symbol ? 'disabled' : '';
+    const { symbol, cellIndex, gameOver, drawSymbol, players, board, toggleTurnAction } = props;
+
+    const disabled = symbol || gameOver ? 'disabled' : '';
     return (
         <div
             className={`cell ${disabled}`}
-            onClick={() => drawSymbol(board, players, cellIndex)}
+            onClick={ () => drawSymbol(board, players, cellIndex).then(() => {toggleTurnAction();}) }
         >
             {symbol ?
-                (symbol === 'X'
-                    ? <Cross />
-                    : <Zero />)
+                !gameOver ?
+                    (symbol === 'X'
+                        ? <Cross />
+                        : <Zero />)
+                    : 'GAME OVER'
                 : ''
             }
         </div>
@@ -33,16 +32,12 @@ const mapStateToProps = ({ board, players }) => ({ board, players });
 const mapDispatchToProps = dispatch => ({
     drawSymbol: (board, players, cellIndex) => {
         if (players[players.turn] === 'X') {
-            dispatch(drawXAction(cellIndex));
+            return dispatch(drawXAction(cellIndex));
         }else {
-            dispatch(drawOAction(cellIndex))
+            return dispatch(drawOAction(cellIndex))
         }
-        // const check = board.filter(symbol => symbol === "");
-        // if(check.length === 1)
-        console.log('mapping',board)
-        dispatch(checkGameResult(board));
-        dispatch(toggleTurnAction());
-    }
+    },
+    toggleTurnAction: () => dispatch(toggleTurnAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Square);
