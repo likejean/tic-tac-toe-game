@@ -1,13 +1,20 @@
-import {PLAYER_X, PLAYER_O, TURN} from '../helpers/actionTypes';
+import { PLAYER_X, PLAYER_O, PLAYER_NAME, TURN } from '../helpers/actionTypes';
 
 const initialState = {
     player1: 'X',
     player2: 'O',
+    player1_name: '',
+    player2_name: '',
     turn: 'player1'
 }
 
 export function playerReducer(state = initialState, action) {
     switch (action.type) {
+        case PLAYER_NAME:
+            return {
+                ...state,
+                [action.name]: action.value
+            }
         case PLAYER_X:
             if (action.player === 'player1') {
                 return {

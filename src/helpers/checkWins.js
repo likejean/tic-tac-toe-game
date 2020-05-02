@@ -12,7 +12,7 @@ export const winsOptions = [
 
 export const checkVictory = (wins, board, symbol) => {
     for (let i = 0; i < wins.length; i++){
-        if (board[wins[i][0]] === symbol && board[wins[i][1]] === symbol && board[wins[i][2]] === symbol) return true;
+        if (board[wins[i][0]] === symbol && board[wins[i][1]] === symbol && board[wins[i][2]] === symbol) return { win: true, combo: wins[i] };
     }
-    return false;
+    return { win: false, combo: null };
 };

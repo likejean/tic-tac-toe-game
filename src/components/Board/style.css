@@ -6,15 +6,33 @@
     height: 515px;
 }
 
+body {
+    text-align: center;
+}
+
 .badge {
     padding: 10px;
     margin: 5px;
     font-size: 18px;
 }
 
+.game-over {
+    display: flex;
+    justify-content: center;
+}
+
 
 .reset {
-    width: 50%;
-    margin: 5px;
+    width: 240px;
+    color: blue;
+    font-size: 28px;
+    margin: 8px;
 }
+
+.start {
+    width: 240px;
+    font-size: 28px;
+    margin: 8px;
+}
+
 

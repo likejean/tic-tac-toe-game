@@ -3,17 +3,19 @@ import  { checkVictory, winsOptions } from '../helpers/checkWins';
 
 export function checkGameResult(board) {
 
-    if(checkVictory(winsOptions, board, 'X')) {
+    if(checkVictory(winsOptions, board, 'X').win) {
         return {
-            type: X_WINS
+            type: X_WINS,
+            payload: checkVictory(winsOptions, board, 'X').combo
         }
-    }else if(checkVictory(winsOptions, board, 'O')) {
+    }else if(checkVictory(winsOptions, board, 'O').win) {
         return {
-            type: O_WINS
+            type: O_WINS,
+            payload: checkVictory(winsOptions, board, 'O').combo
         }
     }else{
-        const checkBlanks = board.filter(symbol => symbol === '');
-        if (checkBlanks.length === 0){
+        const checkBlankCells = board.filter(symbol => symbol === '');
+        if (checkBlankCells.length === 0){
             return {
                 type: TIE
             }

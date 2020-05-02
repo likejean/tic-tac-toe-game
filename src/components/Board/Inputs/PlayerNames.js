@@ -1,9 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './style.css';
+import {changePlayer1Name, changePlayer2Name} from "../../../actions/playerAction";
 
 
-export default connect()(() => {
+export default connect(
+    ({result, board, players}) => ({result, board, players}),
+    dispatch => (
+        {
+            changePlayer1Name: e => dispatch(changePlayer1Name(e)),
+            changePlayer2Name: e => dispatch(changePlayer2Name(e))
+        }
+    ))(props => {
+    const {players: {player1_name, player2_name}, changePlayer1Name, changePlayer2Name} = props;
     return (
         <React.Fragment>
             <div className='container inputs'>
@@ -14,13 +23,10 @@ export default connect()(() => {
                         </div>
                         <input
                             type="text"
-                            id='player1'
+                            name='player1_name'
+                            value={player1_name}
                             className="form-control"
-                            onChange={e => {
-                                {
-                                    {}
-                                }
-                            }}
+                            onChange={changePlayer1Name}
                             aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm"
                         />
@@ -31,11 +37,10 @@ export default connect()(() => {
                         </div>
                         <input
                             type="text"
-                            id='player2'
+                            name='player2_name'
+                            value={player2_name}
                             className="form-control"
-                            onChange={e => {
-                                {}
-                            }}
+                            onChange={changePlayer2Name}
                             aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm"
                         />

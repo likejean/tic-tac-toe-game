@@ -1,4 +1,21 @@
-import { PLAYER_X, PLAYER_O, TURN } from '../helpers/actionTypes';
+import {PLAYER_X, PLAYER_O, PLAYER_NAME, TURN, START_GAME} from '../helpers/actionTypes';
+
+
+export function changePlayer1Name(e) {
+    return {
+        type: PLAYER_NAME,
+        name: e.target.name,
+        value: e.target.value
+    }
+};
+
+export function changePlayer2Name(e) {
+    return {
+        type: PLAYER_NAME,
+        name: e.target.name,
+        value: e.target.value
+    }
+};
 
 export function selectXPlayerAction(player) {
     return {
@@ -17,6 +34,17 @@ export function selectOPlayerAction(player) {
 export function toggleTurnAction() {
     return {
         type: TURN
+    }
+};
+
+export function startGame() {
+    return dispatch => {
+        return new Promise(resolve => {
+            dispatch({
+                type: START_GAME
+            });
+            resolve(() => console.log(resolve));
+        })
     }
 };
 
