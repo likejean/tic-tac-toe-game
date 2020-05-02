@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "65a2a40e625ce01f9bebf856f094b642",
+    "revision": "bc6539e65a6a4e55dfa48c6e26bd751d",
     "url": "/tic-tac-toe-game/index.html"
   },
   {
-    "revision": "51747f736e912d97dd3e",
+    "revision": "424e19560816edf627b7",
     "url": "/tic-tac-toe-game/static/css/main.fd5898e3.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tic-tac-toe-game/static/js/2.efc64184.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "51747f736e912d97dd3e",
-    "url": "/tic-tac-toe-game/static/js/main.76fbe3f4.chunk.js"
+    "revision": "424e19560816edf627b7",
+    "url": "/tic-tac-toe-game/static/js/main.173abed2.chunk.js"
   },
   {
     "revision": "8c4d61af3a257a7e437d",
