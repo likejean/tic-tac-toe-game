@@ -17,8 +17,8 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "npm run build && node build",
-    "heroku-postbuild": "npm install",
+    "start": "npm install -g serve; serve -s build",
+    "heroku-postbuild": "npm run build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
